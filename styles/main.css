@@ -2168,19 +2168,19 @@ p > code {
       background-color: #f1f3f57f;
     }
     .site-meta {
-      background: #000 !important;
+      background: #e9ecef !important;
     }
     .head-top-line {
-      background: #000;
+      background: #e9ecef;
     }
     .brand {
-      background: #0000007f;
+      background: #ced4da7f;
     }
     .main-title, .brand {
-      color: #343a40 !important;
+      color: #495057 !important;
     }
     .mist .site-title i {
-      background: #343a407f;
+      background: #4950577f;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
