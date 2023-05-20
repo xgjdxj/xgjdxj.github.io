@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>三角形的重心 | 徐冠军</title>
+<meta name="keywords" content="几何, TYNFMS">
+<meta name="description" content="三角形的重心">
+<meta name="author" content="许个头发vb170">
+<link rel="canonical" href="https://xgjdxj.github.io/post/geometry-gravity/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.88f8b3d79ad154ca889d18e95c68aeb66ab1023f015b98fbf0ddd5aabd0d53c9.css" integrity="sha256-iPiz15rRVMqInRjpXGiutmqxAj8BW5j78N3Vqr0NU8k=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="apple-touch-icon" href="https://xgjdxj.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://xgjdxj.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+<meta property="og:title" content="三角形的重心" />
+<meta property="og:description" content="三角形的重心" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xgjdxj.github.io/post/geometry-gravity/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-17T10:49:42+08:00" />
+<meta property="article:modified_time" content="2021-10-17T10:49:42+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="三角形的重心"/>
+<meta name="twitter:description" content="三角形的重心"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://xgjdxj.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "三角形的重心",
+      "item": "https://xgjdxj.github.io/post/geometry-gravity/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "三角形的重心",
+  "name": "三角形的重心",
+  "description": "三角形的重心",
+  "keywords": [
+    "几何", "TYNFMS"
+  ],
+  "articleBody": "三角形的重心的性质 三角形的重心（一般用字母$G$表示），是三角形三条中线的交点，如下图。 重心作为一个特殊点，有什么特殊的性质呢？ 性质1 重心到一边中点的距离是这条边上中线的长的三分之一。如上图，我们有$BD=3GD，CF=3GF，AE=3GE$。 性质2 若$G$为$\\triangle ABC$的重心，则$S_{\\triangle ABG}=S_{\\triangle BCG}=S_{\\triangle CAG}=\\frac{1}{3}S_{\\triangle ABC}，反之亦然$。 性质3（严格来讲这不能算重心的性质，不过在这里也讲一下吧） ——中线长公式 在上图中，我们有$BD^2=\\frac{1}{2}AB^2+\\frac{1}{2}BC^2-\\frac{1}{4}AC^2$。该公式揭示了中线的长度与三角形三边长度的关系。这个东西的证明方法相信大家都已经会了。\n到现在，我们能初步发现，关于重心的性质大都围绕着边和面积，因此单纯与重心有关的难题大多需要复杂的边和面积的计算（此时我们伟大bjq负责的代数在几何中的重要性就体现了），即使是关于重心的简单题目，也要先往导边和面积法的方向上走一走。\n有意思的东西——莱布尼兹公式 在上图中，我们有$AP^2+BP^2+CP^2=3PG^2+\\frac{1}{3}(AB^2+BC^2+CA^2)$.这个结论对$\\triangle ABC$中任意一点$P$都成立。 如何证明呢？我们需要证明两个分结论： $$AP^2+BP^2+CP^2=AG^2+BG^2+CG^2+3PG^2$$ $$GA^2+GB^2+GC^2=\\frac{1}{3}(AB^2+BC^2+CA^2)$$ 先来证明第一个结论。\n上图中，$D$为$BC$边上的中点，由余弦定理，我们有$AP^2=AG^2+PG^2-2AG\\cdot PG\\cdot\\cos\\angle AGP，PD^2=DG^2+PG^2-2DG\\cdot PG\\cdot\\cos\\angle DGP$，而$AG=2DG，\\cos\\angle AGP=-\\cos\\angle DGP$，于是，1式+2式+2式，我们有$AP^2+2PD^2=AG^2+2DG^2+3PG^2$。 又由中线长公式，我们有$2PD^2=PB^2+PC^2-\\frac{1}{2}BC^2，2DG^2=BG^2+CG^2-\\frac{1}{2}BC^2$，代入上式就能得到$AP^2+BP^2+CP^2=AG^2+BG^2+CG^2+3PG^2$。\n再来证明第二个结论。\n实际上，由中线长公式和重心的性质，我们有$\\frac{9}{4}AG^2=\\frac{1}{2}AB^2+\\frac{1}{2}AC^2-\\frac{1}{4}BC^2，\\frac{9}{4}BG^2=\\frac{1}{2}AB^2+\\frac{1}{2}BC^2-\\frac{1}{4}AC^2，\\frac{9}{4}CG^2=\\frac{1}{2}BC^2+\\frac{1}{2}AC^2-\\frac{1}{4}AB^2$。三个式子相加整理即证。\n由上，我们证明了莱布尼兹公式和两个比较有用的结论。通过上面的证明，我们已经看到了计算（尤其是中线长公式）在重心有关问题中的应用次数。 除了上面两个结论之外，我再补充一个结论： $$BC^2+3GA^2=CA^2+3GB^2=AB^2+3GC^2=2(AG^2+BG^2+CG^2).$$\n重心性质的应用——线段比例的转化 例题1： 在$\\triangle ABC$中，$G$为重心，$P$为形内一点，直线$PG$交直线$BC$、$CA$、$AB$于$A’，B’，C’$，求证:$\\frac{A’P}{A’G}+\\frac{B’P}{B’G}+\\frac{C’P}{C’G}=3$。 提示：遇到三个式子相加等于某个式子，而这些式子用平常的方法难以做变换时，可以考虑面积法。\n证明： 如上图作辅助线，其中$GG’\\perp BC，PP’\\perp BC$。 从而$GG’//PP’，\\frac{PP’}{GG’}=\\frac{A’P}{A’G}$。因为$\\frac{S_{\\triangle PBC}}{S_{\\triangle GBC}}=\\frac{PP’}{GG’}$，所以$\\frac{S_{\\triangle PBC}}{S_{\\triangle GBC}}=\\frac{A’P}{A’G}$。 同理，我们可以得到$\\frac{S_{\\triangle PCA}}{S_{\\triangle GCA}}=\\frac{B’P}{B’G}，\\frac{S_{\\triangle PAB}}{S_{\\triangle GAB}}=\\frac{C’P}{C’G}$。 因为G为重心，所以$S_{\\triangle GAB}=S_{\\triangle GBC}=S_{\\triangle GCA}$，从而将上面三个式子相加即证。\nTips：除了用面积法转化线段比例，我们还可以使用相似和平行线。\n例题2： 在$\\triangle ABC$中，$G$为重心，过$G$的直线交$AB$于$P$，交$AC$于$Q$，证明：$\\frac{AB}{AP}+\\frac{AC}{AQ}=3$。 提示：转化线段比例，平行线与相似首先要考虑。 证明：如图作辅助线，其中$BD//AM//EC$ 证明原命题相当于证明$\\frac{PB}{AP}+\\frac{QC}{AQ}=1$。 因为$\\frac{PB}{AP}=\\frac{DB}{AG}，\\frac{QC}{AQ}=\\frac{EC}{AG}$，所以只要证明$PB+QC=AG$。而因为$GM$是梯形$DBCE$的中位线，所以$PB+QC=2GM=AG$，证毕。\n重心性质的应用——中线长公式 例题1： 设$O$为$\\triangle ABC$的外心，$AB=AC$，$D$是$AB$的中点，$G$是$\\triangle ACD$的重心，求证：$OG\\perp CD$. 证明： 如图作辅助线。要证明$OG\\perp CD$，只要证明$DG^2-GC^2=DO^2-OC^2$. 由中线长公式和重心性质，$LHS=\\frac{4}{9}DE^2-\\frac{4}{9}GC^2=\\frac{4}{9}(\\frac{1}{2}AD^2+\\frac{1}{2}AC^2-\\frac{1}{4}AD^2)-\\frac{4}{9}(\\frac{1}{2}DC^2+\\frac{1}{2}AC^2-\\frac{1}{4}AD^2)=\\frac{2}{9}AD^2+\\frac{2}{9}DC^2-\\frac{1}{9}AC^2-\\frac{2}{9}DC^2-\\frac{2}{9}AC^2+\\frac{1}{9}AD^2=\\frac{1}{3}AD^2-\\frac{1}{3}AC^2=-AD^2$. 而$RHS=DO^2-OC^2=DO^2-AO^2=DO^2-(OD^2+AD^2)=-AD^2$. 所以$LHS=RHS$，证毕。 例题2： 设$\\triangle ABC$的重心为$G$，$AG$，$BG$，$CG$，分别交对边于$D$，$E$，$F$，交$\\triangle ABC$的外接圆于$A’$，$B’$，$C’$，求证：$\\frac{A’D}{DA}+\\frac{B’E}{EB}+\\frac{C’F}{FC}\\geqslant 1$. 证明：设$BC=a$,$CA=B$,$AB=c$，这三边上的中线分别记为$m_a$,$m_b$,$m_c$。 由相交弦定理，我们有$\\frac{A’D}{DA}=\\frac{A’D\\cdot DA}{DA^2}=\\frac{BD\\cdot DC}{DA^2}=\\frac{a^2}{4m_a^2}$。 对其余两个式子做相同的操作，我们可知要证明原命题，我们只要证明： $$\\frac{a^2}{m_a^2}+\\frac{b^2}{m_b^2}+\\frac{c^2}{m_c^2}\\geqslant 4$$ 由三角形的中线长公式，我们易知$a^2=\\frac{4}{9}(2m_b^2+2m_c^2-m_a^2),b^2=\\frac{4}{9}(2m_c^2+2m_a^2-m_b^2),c^2=\\frac{4}{9}(2m_a^2+2m_b^2-m_c^2)$，代入左式即知不等式成立。\n习题 （欢迎大家投稿补充！）\n在$\\triangle ABC$中，设$E$，$F$分别为$AC$，$AB$的中点，$D$为$BC$上任一点，$P$,$Q$两点分别满足$DP//CF$，$DQ//BE$，$PQ$交$BE$于$R$，交$CF$与$S$。求证：$PQ=3RS$.\n提示 有较多已知的平行，利用它们转化线段比例。 已知$\\triangle ABC$的重心$G$和内心$I$的连线$GI//BC$。求证：$AB+AC=2BC$\n提示 使用面积法。 3.证明：如果三角形的三边的平方成等差数列，那么该三角形和由它的三条中线围成的新三角形相似。\n提示 边的平方成等差数列，有助于我们用中线长公式暴算。 ",
+  "wordCount" : "3447",
+  "inLanguage": "zh",
+  "datePublished": "2021-10-17T10:49:42+08:00",
+  "dateModified": "2021-10-17T10:49:42+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "许个头发vb170"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://xgjdxj.github.io/post/geometry-gravity/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "徐冠军",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://xgjdxj.github.io/img/logo.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://xgjdxj.github.io" accesskey="h" title="徐冠军 (Alt + H)">徐冠军</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://xgjdxj.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/archives" title="⏱归档">
+                    <span>⏱归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/" title="📚文章">
+                    <span>📚文章</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://xgjdxj.github.io">主页</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      三角形的重心
+    </h1>
+    <div class="post-description">
+      三角形的重心
+    </div>
+    <div class="post-meta">
+
+
+
+
+
+
+
+
+
+
+创建:&nbsp;<span title='2021-10-17 10:49:42 +0800 CST'>2021-10-17</span>&nbsp;|&nbsp;更新:&nbsp;2021-10-17&nbsp;|&nbsp;字数:&nbsp;3447字&nbsp;|&nbsp;时长: 7分钟&nbsp;|&nbsp;许个头发vb170
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e4%b8%89%e8%a7%92%e5%bd%a2%e7%9a%84%e9%87%8d%e5%bf%83%e7%9a%84%e6%80%a7%e8%b4%a8" aria-label="三角形的重心的性质">三角形的重心的性质</a></li>
+                    <li>
+                        <a href="#%e6%9c%89%e6%84%8f%e6%80%9d%e7%9a%84%e4%b8%9c%e8%a5%bf%e8%8e%b1%e5%b8%83%e5%b0%bc%e5%85%b9%e5%85%ac%e5%bc%8f" aria-label="有意思的东西——莱布尼兹公式">有意思的东西——莱布尼兹公式</a></li>
+                    <li>
+                        <a href="#%e9%87%8d%e5%bf%83%e6%80%a7%e8%b4%a8%e7%9a%84%e5%ba%94%e7%94%a8%e7%ba%bf%e6%ae%b5%e6%af%94%e4%be%8b%e7%9a%84%e8%bd%ac%e5%8c%96" aria-label="重心性质的应用——线段比例的转化">重心性质的应用——线段比例的转化</a></li>
+                    <li>
+                        <a href="#%e9%87%8d%e5%bf%83%e6%80%a7%e8%b4%a8%e7%9a%84%e5%ba%94%e7%94%a8%e4%b8%ad%e7%ba%bf%e9%95%bf%e5%85%ac%e5%bc%8f" aria-label="重心性质的应用——中线长公式">重心性质的应用——中线长公式</a></li>
+                    <li>
+                        <a href="#%e4%b9%a0%e9%a2%98" aria-label="习题">习题</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h2 id="三角形的重心的性质">三角形的重心的性质<a hidden class="anchor" aria-hidden="true" href="#三角形的重心的性质">#</a></h2>
+<p>三角形的重心（一般用字母$G$表示），是三角形三条中线的交点，如下图。
+<img loading="lazy" src="/img/1634440029850.PNG" alt=""  />
+
+重心作为一个特殊点，有什么特殊的性质呢？
+<strong>性质1</strong> 重心到一边中点的距离是这条边上中线的长的三分之一。如上图，我们有$BD=3GD，CF=3GF，AE=3GE$。
+<strong>性质2</strong> 若$G$为$\triangle ABC$的重心，则$S_{\triangle ABG}=S_{\triangle BCG}=S_{\triangle CAG}=\frac{1}{3}S_{\triangle ABC}，反之亦然$。
+<strong>性质3</strong>（严格来讲这不能算重心的性质，不过在这里也讲一下吧）
+——<strong>中线长公式</strong>
+在上图中，我们有$BD^2=\frac{1}{2}AB^2+\frac{1}{2}BC^2-\frac{1}{4}AC^2$。该公式揭示了中线的长度与三角形三边长度的关系。这个东西的证明方法相信大家都已经会了。</p>
+<p>到现在，我们能初步发现，关于重心的性质大都围绕着<strong>边</strong>和<strong>面积</strong>，因此单纯与重心有关的难题大多需要复杂的边和面积的计算（此时我们伟大bjq负责的代数在几何中的重要性就体现了），即使是关于重心的简单题目，也要先往<strong>导边</strong>和<strong>面积法</strong>的方向上走一走。</p>
+<h2 id="有意思的东西莱布尼兹公式">有意思的东西——莱布尼兹公式<a hidden class="anchor" aria-hidden="true" href="#有意思的东西莱布尼兹公式">#</a></h2>
+<p><img loading="lazy" src="/img/1634975544333.PNG" alt=""  />
+
+在上图中，我们有$AP^2+BP^2+CP^2=3PG^2+\frac{1}{3}(AB^2+BC^2+CA^2)$.这个结论对$\triangle ABC$中任意一点$P$都成立。
+如何证明呢？我们需要证明两个分结论：
+$$AP^2+BP^2+CP^2=AG^2+BG^2+CG^2+3PG^2$$
+$$GA^2+GB^2+GC^2=\frac{1}{3}(AB^2+BC^2+CA^2)$$
+先来证明第一个结论。</p>
+<p>上图中，$D$为$BC$边上的中点，由余弦定理，我们有$AP^2=AG^2+PG^2-2AG\cdot PG\cdot\cos\angle AGP，PD^2=DG^2+PG^2-2DG\cdot PG\cdot\cos\angle DGP$，而$AG=2DG，\cos\angle AGP=-\cos\angle DGP$，于是，1式+2式+2式，我们有$AP^2+2PD^2=AG^2+2DG^2+3PG^2$。
+又由中线长公式，我们有$2PD^2=PB^2+PC^2-\frac{1}{2}BC^2，2DG^2=BG^2+CG^2-\frac{1}{2}BC^2$，代入上式就能得到$AP^2+BP^2+CP^2=AG^2+BG^2+CG^2+3PG^2$。</p>
+<p>再来证明第二个结论。</p>
+<p>实际上，由中线长公式和重心的性质，我们有$\frac{9}{4}AG^2=\frac{1}{2}AB^2+\frac{1}{2}AC^2-\frac{1}{4}BC^2，\frac{9}{4}BG^2=\frac{1}{2}AB^2+\frac{1}{2}BC^2-\frac{1}{4}AC^2，\frac{9}{4}CG^2=\frac{1}{2}BC^2+\frac{1}{2}AC^2-\frac{1}{4}AB^2$。三个式子相加整理即证。</p>
+<p>由上，我们证明了莱布尼兹公式和两个比较有用的结论。通过上面的证明，我们已经看到了计算（尤其是中线长公式）在重心有关问题中的应用次数。
+除了上面两个结论之外，我再补充一个结论：
+$$BC^2+3GA^2=CA^2+3GB^2=AB^2+3GC^2=2(AG^2+BG^2+CG^2).$$</p>
+<h2 id="重心性质的应用线段比例的转化">重心性质的应用——线段比例的转化<a hidden class="anchor" aria-hidden="true" href="#重心性质的应用线段比例的转化">#</a></h2>
+<p><strong>例题1：</strong>
+<img loading="lazy" src="/img/1634978325933.PNG" alt=""  />
+
+在$\triangle ABC$中，$G$为重心，$P$为形内一点，直线$PG$交直线$BC$、$CA$、$AB$于$A&rsquo;，B&rsquo;，C&rsquo;$，求证:$\frac{A&rsquo;P}{A&rsquo;G}+\frac{B&rsquo;P}{B&rsquo;G}+\frac{C&rsquo;P}{C&rsquo;G}=3$。
+提示：遇到三个式子相加等于某个式子，而这些式子用平常的方法难以做变换时，可以考虑<strong>面积法</strong>。</p>
+<p>证明：
+<img loading="lazy" src="/img/1634979415691.PNG" alt=""  />
+
+如上图作辅助线，其中$GG&rsquo;\perp BC，PP&rsquo;\perp BC$。
+从而$GG&rsquo;//PP&rsquo;，\frac{PP&rsquo;}{GG&rsquo;}=\frac{A&rsquo;P}{A&rsquo;G}$。因为$\frac{S_{\triangle PBC}}{S_{\triangle GBC}}=\frac{PP&rsquo;}{GG&rsquo;}$，所以$\frac{S_{\triangle PBC}}{S_{\triangle GBC}}=\frac{A&rsquo;P}{A&rsquo;G}$。
+同理，我们可以得到$\frac{S_{\triangle PCA}}{S_{\triangle GCA}}=\frac{B&rsquo;P}{B&rsquo;G}，\frac{S_{\triangle PAB}}{S_{\triangle GAB}}=\frac{C&rsquo;P}{C&rsquo;G}$。
+因为G为重心，所以$S_{\triangle GAB}=S_{\triangle GBC}=S_{\triangle GCA}$，从而将上面三个式子相加即证。</p>
+<p>Tips：除了用<strong>面积法</strong>转化线段比例，我们还可以使用<strong>相似</strong>和<strong>平行线</strong>。</p>
+<p><strong>例题2：</strong>
+<img loading="lazy" src="/img/1634990452338.PNG" alt=""  />
+
+在$\triangle ABC$中，$G$为重心，过$G$的直线交$AB$于$P$，交$AC$于$Q$，证明：$\frac{AB}{AP}+\frac{AC}{AQ}=3$。
+提示：转化线段比例，平行线与相似首先要考虑。
+<img loading="lazy" src="/img/1634990969795.PNG" alt=""  />
+
+证明：如图作辅助线，其中$BD//AM//EC$
+证明原命题相当于证明$\frac{PB}{AP}+\frac{QC}{AQ}=1$。
+因为$\frac{PB}{AP}=\frac{DB}{AG}，\frac{QC}{AQ}=\frac{EC}{AG}$，所以只要证明$PB+QC=AG$。而因为$GM$是梯形$DBCE$的中位线，所以$PB+QC=2GM=AG$，证毕。</p>
+<h2 id="重心性质的应用中线长公式">重心性质的应用——中线长公式<a hidden class="anchor" aria-hidden="true" href="#重心性质的应用中线长公式">#</a></h2>
+<p><strong>例题1：</strong>
+<img loading="lazy" src="/img/1636188981529.PNG" alt=""  />
+
+设$O$为$\triangle ABC$的外心，$AB=AC$，$D$是$AB$的中点，$G$是$\triangle ACD$的重心，求证：$OG\perp CD$.
+证明：
+<img loading="lazy" src="/img/1636189048913.PNG" alt=""  />
+
+如图作辅助线。要证明$OG\perp CD$，只要证明$DG^2-GC^2=DO^2-OC^2$.
+由中线长公式和重心性质，$LHS=\frac{4}{9}DE^2-\frac{4}{9}GC^2=\frac{4}{9}(\frac{1}{2}AD^2+\frac{1}{2}AC^2-\frac{1}{4}AD^2)-\frac{4}{9}(\frac{1}{2}DC^2+\frac{1}{2}AC^2-\frac{1}{4}AD^2)=\frac{2}{9}AD^2+\frac{2}{9}DC^2-\frac{1}{9}AC^2-\frac{2}{9}DC^2-\frac{2}{9}AC^2+\frac{1}{9}AD^2=\frac{1}{3}AD^2-\frac{1}{3}AC^2=-AD^2$.
+而$RHS=DO^2-OC^2=DO^2-AO^2=DO^2-(OD^2+AD^2)=-AD^2$.
+所以$LHS=RHS$，证毕。
+<strong>例题2：</strong>
+<img loading="lazy" src="/img/1636246535015.PNG" alt=""  />
+
+设$\triangle ABC$的重心为$G$，$AG$，$BG$，$CG$，分别交对边于$D$，$E$，$F$，交$\triangle ABC$的外接圆于$A&rsquo;$，$B&rsquo;$，$C&rsquo;$，求证：$\frac{A&rsquo;D}{DA}+\frac{B&rsquo;E}{EB}+\frac{C&rsquo;F}{FC}\geqslant 1$.
+证明：设$BC=a$,$CA=B$,$AB=c$，这三边上的中线分别记为$m_a$,$m_b$,$m_c$。
+由相交弦定理，我们有$\frac{A&rsquo;D}{DA}=\frac{A&rsquo;D\cdot DA}{DA^2}=\frac{BD\cdot DC}{DA^2}=\frac{a^2}{4m_a^2}$。
+对其余两个式子做相同的操作，我们可知要证明原命题，我们只要证明：
+$$\frac{a^2}{m_a^2}+\frac{b^2}{m_b^2}+\frac{c^2}{m_c^2}\geqslant 4$$
+由三角形的中线长公式，我们易知$a^2=\frac{4}{9}(2m_b^2+2m_c^2-m_a^2),b^2=\frac{4}{9}(2m_c^2+2m_a^2-m_b^2),c^2=\frac{4}{9}(2m_a^2+2m_b^2-m_c^2)$，代入左式即知不等式成立。</p>
+<h2 id="习题">习题<a hidden class="anchor" aria-hidden="true" href="#习题">#</a></h2>
+<p>（欢迎大家投稿补充！）</p>
+<ol>
+<li></li>
+</ol>
+<p><img loading="lazy" src="/img/1636250416380.PNG" alt=""  />
+
+在$\triangle ABC$中，设$E$，$F$分别为$AC$，$AB$的中点，$D$为$BC$上任一点，$P$,$Q$两点分别满足$DP//CF$，$DQ//BE$，$PQ$交$BE$于$R$，交$CF$与$S$。求证：$PQ=3RS$.</p>
+<details>
+    <summary>提示</summary>
+    有较多已知的平行，利用它们转化线段比例。
+</details>
+<p> </p>
+<ol start="2">
+<li></li>
+</ol>
+<p><img loading="lazy" src="/img/1636251333596.PNG" alt=""  />
+
+已知$\triangle ABC$的重心$G$和内心$I$的连线$GI//BC$。求证：$AB+AC=2BC$</p>
+<details>
+    <summary>提示</summary>
+    使用面积法。
+</details>
+<p> </p>
+<p>3.证明：如果三角形的三边的平方成等差数列，那么该三角形和由它的三条中线围成的新三角形相似。</p>
+<details>
+    <summary>提示</summary>
+    边的平方成等差数列，有助于我们用中线长公式暴算。
+</details>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://xgjdxj.github.io/tags/%E5%87%A0%E4%BD%95/">几何</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/tynfms/">TYNFMS</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://xgjdxj.github.io/post/geometry-incenter/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>三角形的内心</span>
+  </a>
+  <a class="next" href="https://xgjdxj.github.io/post/geometry-pascal/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>帕斯卡定理</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://xgjdxj.github.io">徐冠军</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style></body>
+
+</html>
