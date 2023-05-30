@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>二次剩余 | 徐冠军</title>
+<meta name="keywords" content="TYNFMS, 数论">
+<meta name="description" content="二次剩余">
+<meta name="author" content="许个头发vb170">
+<link rel="canonical" href="https://xgjdxj.github.io/post/tynfms/number-theory-quadratic-residue/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="apple-touch-icon" href="https://xgjdxj.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://xgjdxj.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+<meta property="og:title" content="二次剩余" />
+<meta property="og:description" content="二次剩余" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xgjdxj.github.io/post/tynfms/number-theory-quadratic-residue/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-30T21:51:00+08:00" />
+<meta property="article:modified_time" content="2023-05-30T21:51:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="二次剩余"/>
+<meta name="twitter:description" content="二次剩余"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://xgjdxj.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "TYNFMS",
+      "item": "https://xgjdxj.github.io/post/tynfms/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "二次剩余",
+      "item": "https://xgjdxj.github.io/post/tynfms/number-theory-quadratic-residue/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "二次剩余",
+  "name": "二次剩余",
+  "description": "二次剩余",
+  "keywords": [
+    "TYNFMS", "数论"
+  ],
+  "articleBody": "本篇文章主要讨论Lagendre符号的求和运算性质。 下为Lagendre的基本运算性质：\n1.($\\frac{d}{p}$)=($\\frac{p+d}{p}$) 2.($\\frac{d}{p})\\equiv d^{\\frac{p-1}{2}} (mod\\ p)$ 3.$(\\frac{d_1d_2}{p})=(\\frac{d1}{p})(\\frac{d2}{p})$ 4.当$p|d$时，$(\\frac{d^2}{p})=1$\n我们知道，在奇素数$p$的完全剩余系中有其$\\frac{p-1}{2}$个二次剩余和$\\frac{p-1}{2}$个二次非剩余（以及一个被$p$整除的数），因此，我们有 $$\\sum_{i=1}^{p} (\\frac{i}{p})=0$$\n而当$(a,p)=1$时，$f(x)=ax+b$和 $x$同时遍历$p$的完全剩余系，因此，我们有 $$\\sum_{i=1}^p \\frac{ai+b}{p} =0$$\n如果$f(x$)是一个二次多项式呢？\n我们有命题如下：\n命题1 已知奇素数$p\u003e2$，$(a,p)=1$ ，以及$f(x)=ax^2+bx+c$，$\\Delta = b^2-4ac$ ，则有： (1) 若$(\\Delta,p)=1$，则$\\sum_{x=1}^p (\\frac{f(x)}{p})=-(\\frac{a}{p})$ (2) 若$p|\\Delta$ ，则$\\sum_{x=1}^p (\\frac{f(x)}{p})=(p-1)(\\frac{a}{p})$\n证明：$\\sum_{x=1}^{p} (\\frac{f(x)}{p})=\\sum_{x=1}^{p} (\\frac{ax^2+bx+c}{p})(\\frac{a}{p})(\\frac{a}{p})(\\frac{4}{p}) \\ =(\\frac{a}{p})\\sum_{x=1}^{p}(\\frac{(2ax+b)^2-\\Delta}{p})$ $x$与$2ax+b$同时遍历$p$的完全剩余系，因此\n原式$=(\\frac{a}{p})\\sum_{x=1}^p(\\frac{x^2-\\Delta}{p})$\n当$p|\\Delta$时，原式$=(\\frac{a}{p})\\sum_{x=1}^p (\\frac{x^2}{p})=(p-1)(\\frac{a}{p})$\n当$(p,\\Delta)=1$时，我们考虑二元同余方程$x^2-\\Delta\\equiv y^2(mod\\ p)$的解数$S$。\n一方面，对每一个确定的$x$，关于$y$的同余方程$x^2-\\Delta\\equiv y^2(mod\\ p)$的解数为$1+(\\frac{x^2-\\Delta}{p})$，从而 $$S=p+\\sum_{x=1}^{p}(\\frac{x^2-\\Delta}{p}) \\tag{1}$$\n另一方面原方程等价于关于$x$和$y$的同余方程组$$\\left\\{\\begin{aligned} x^2\\equiv\\Delta +u(mod\\ p) \\\\ y^2\\equiv u(mod\\ p)\\end{aligned}\\right.$$ 对每一个确定的$u$，方程组的解数为$((\\frac{u}{p})+1)((\\frac{\\Delta +u}{p})+1)$ ，因此\n$$S=\\sum_{u=1}^p ((\\frac{u}{p})+1)((\\frac{\\Delta +u}{p})+1)=\\sum_{u=1}^p((\\frac{u^2+\\Delta\\cdot u}{p})+(\\frac{u}{p})+(\\frac{\\Delta +u}{p})+1)=p+\\sum_{u=1}^p((\\frac{u^2+\\Delta\\cdot u}{p})$$\n由$u$与$\\Delta\\cdot u$同时遍历$p$的完全剩余系，因此$\\sum_{u=1}^p((\\frac{u^2+\\Delta\\cdot u}{p})=\\sum_{u=1}^p((\\frac{(\\Delta\\cdot u)^2+\\Delta\\cdot(\\Delta\\cdot u)}{p})=\\sum_{u=1}^p((\\frac{u^2+u}{p})=\\sum_{u=1}^{p-1}((\\frac{u^2+ u}{p})$\n对$1,2,\\cdots,p-1$中的任何一个数$u$，存在它的逆元$r_u$，从而$\\sum_{u=1}^{p-1}(\\frac{u^2+ u}{p})=\\sum_{u=1}^{p-1}(\\frac{u^2+ u^2 r_u}{p})=\\sum_{u=1}^{p-1}(\\frac{1+r_u}{p})$\n而$r_u$遍历${1,2,\\cdots,p-1}$，从而上式的值为$-1$，从而$S=p-1$，代入(1)式即得 $$\\sum_{x=1}^{p}(\\frac{x^2-\\Delta}{p})=-1$$ 证毕。\n",
+  "wordCount" : "966",
+  "inLanguage": "zh",
+  "datePublished": "2023-05-30T21:51:00+08:00",
+  "dateModified": "2023-05-30T21:51:00+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "许个头发vb170"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://xgjdxj.github.io/post/tynfms/number-theory-quadratic-residue/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "徐冠军",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://xgjdxj.github.io/img/logo.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://xgjdxj.github.io/" accesskey="h" title="徐冠军 (Alt + H)">徐冠军</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://xgjdxj.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/archives" title="⏱归档">
+                    <span>⏱归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/xgjnb" title="📚冠军">
+                    <span>📚冠军</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/tynfms" title="✏️TYNFMS">
+                    <span>✏️TYNFMS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://xgjdxj.github.io/">主页</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/">Posts</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/tynfms/">TYNFMS</a></div>
+    <h1 class="post-title">
+      二次剩余
+    </h1>
+    <div class="post-description">
+      二次剩余
+    </div>
+    <div class="post-meta">
+
+
+
+
+
+
+
+
+
+
+创建:&nbsp;<span title='2023-05-30 21:51:00 +0800 CST'>2023-05-30</span>&nbsp;|&nbsp;更新:&nbsp;2023-05-30&nbsp;|&nbsp;字数:&nbsp;966字&nbsp;|&nbsp;时长: 2分钟&nbsp;|&nbsp;许个头发vb170
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>本篇文章主要讨论Lagendre符号的求和运算性质。
+下为Lagendre的基本运算性质：</p>
+<p>1.($\frac{d}{p}$)=($\frac{p+d}{p}$)
+2.($\frac{d}{p})\equiv d^{\frac{p-1}{2}} (mod\ p)$
+3.$(\frac{d_1d_2}{p})=(\frac{d1}{p})(\frac{d2}{p})$
+4.当$p|d$时，$(\frac{d^2}{p})=1$</p>
+<p>我们知道，在奇素数$p$的完全剩余系中有其$\frac{p-1}{2}$个二次剩余和$\frac{p-1}{2}$个二次非剩余（以及一个被$p$整除的数），因此，我们有
+$$\sum_{i=1}^{p} (\frac{i}{p})=0$$</p>
+<p>而当$(a,p)=1$时，$f(x)=ax+b$和 $x$同时遍历$p$的完全剩余系，因此，我们有
+$$\sum_{i=1}^p \frac{ai+b}{p} =0$$</p>
+<p>如果$f(x$)是一个二次多项式呢？</p>
+<p>我们有命题如下：</p>
+<p><strong>命题1</strong> 已知奇素数$p&gt;2$，$(a,p)=1$ ，以及$f(x)=ax^2+bx+c$，$\Delta = b^2-4ac$ ，则有：
+(1) 若$(\Delta,p)=1$，则$\sum_{x=1}^p (\frac{f(x)}{p})=-(\frac{a}{p})$
+(2) 若$p|\Delta$ ，则$\sum_{x=1}^p (\frac{f(x)}{p})=(p-1)(\frac{a}{p})$</p>
+<p>证明：$\sum_{x=1}^{p} (\frac{f(x)}{p})=\sum_{x=1}^{p} (\frac{ax^2+bx+c}{p})(\frac{a}{p})(\frac{a}{p})(\frac{4}{p}) \ =(\frac{a}{p})\sum_{x=1}^{p}(\frac{(2ax+b)^2-\Delta}{p})$
+$x$与$2ax+b$同时遍历$p$的完全剩余系，因此</p>
+<p>原式$=(\frac{a}{p})\sum_{x=1}^p(\frac{x^2-\Delta}{p})$</p>
+<p>当$p|\Delta$时，原式$=(\frac{a}{p})\sum_{x=1}^p (\frac{x^2}{p})=(p-1)(\frac{a}{p})$</p>
+<p>当$(p,\Delta)=1$时，我们考虑二元同余方程$x^2-\Delta\equiv y^2(mod\ p)$的解数$S$。</p>
+<p>一方面，对每一个确定的$x$，关于$y$的同余方程$x^2-\Delta\equiv y^2(mod\ p)$的解数为$1+(\frac{x^2-\Delta}{p})$，从而
+$$S=p+\sum_{x=1}^{p}(\frac{x^2-\Delta}{p}) \tag{1}$$</p>
+<p>另一方面原方程等价于关于$x$和$y$的同余方程组<code>$$\left\{\begin{aligned} x^2\equiv\Delta +u(mod\ p) \\ y^2\equiv u(mod\ p)\end{aligned}\right.$$</code>
+对每一个确定的$u$，方程组的解数为$((\frac{u}{p})+1)((\frac{\Delta +u}{p})+1)$ ，因此</p>
+<p>$$S=\sum_{u=1}^p ((\frac{u}{p})+1)((\frac{\Delta +u}{p})+1)=\sum_{u=1}^p((\frac{u^2+\Delta\cdot u}{p})+(\frac{u}{p})+(\frac{\Delta +u}{p})+1)=p+\sum_{u=1}^p((\frac{u^2+\Delta\cdot u}{p})$$</p>
+<p>由$u$与$\Delta\cdot u$同时遍历$p$的完全剩余系，因此$\sum_{u=1}^p((\frac{u^2+\Delta\cdot u}{p})=\sum_{u=1}^p((\frac{(\Delta\cdot u)^2+\Delta\cdot(\Delta\cdot u)}{p})=\sum_{u=1}^p((\frac{u^2+u}{p})=\sum_{u=1}^{p-1}((\frac{u^2+ u}{p})$</p>
+<p>对$1,2,\cdots,p-1$中的任何一个数$u$，存在它的逆元$r_u$，从而$\sum_{u=1}^{p-1}(\frac{u^2+ u}{p})=\sum_{u=1}^{p-1}(\frac{u^2+ u^2 r_u}{p})=\sum_{u=1}^{p-1}(\frac{1+r_u}{p})$</p>
+<p>而$r_u$遍历${1,2,\cdots,p-1}$，从而上式的值为$-1$，从而$S=p-1$，代入(1)式即得
+$$\sum_{x=1}^{p}(\frac{x^2-\Delta}{p})=-1$$
+证毕。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://xgjdxj.github.io/tags/tynfms/">TYNFMS</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/%E6%95%B0%E8%AE%BA/">数论</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://xgjdxj.github.io/post/tynfms/number-theory-congruence/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>同余</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+    repo="xgjdxj/xgjcomments"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://xgjdxj.github.io/">徐冠军</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style></body>
+
+</html>
