@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>李伟恒等式 | 徐冠军</title>
+<meta name="keywords" content="PhoenixLiwei, TYNFMS, 代数">
+<meta name="description" content="李伟恒等式">
+<meta name="author" content="True">
+<link rel="canonical" href="https://xgjdxj.github.io/post/tynfms/liweis_formula/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="apple-touch-icon" href="https://xgjdxj.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://xgjdxj.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+<meta property="og:title" content="李伟恒等式" />
+<meta property="og:description" content="李伟恒等式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xgjdxj.github.io/post/tynfms/liweis_formula/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-05T13:40:59+08:00" />
+<meta property="article:modified_time" content="2021-12-05T13:40:59+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="李伟恒等式"/>
+<meta name="twitter:description" content="李伟恒等式"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://xgjdxj.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "TYNFMS",
+      "item": "https://xgjdxj.github.io/post/tynfms/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "李伟恒等式",
+      "item": "https://xgjdxj.github.io/post/tynfms/liweis_formula/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "李伟恒等式",
+  "name": "李伟恒等式",
+  "description": "李伟恒等式",
+  "keywords": [
+    "PhoenixLiwei", "TYNFMS", "代数"
+  ],
+  "articleBody": "请用鼠标从左向右拖拽观赏（斜眼笑）\n$ \\cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - \\cfrac{a\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + b\\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + c\\sqrt{(a - b) ^ 2 + (p - q) ^ 2}}{\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \\sqrt{(a - b) ^ 2 + (p - q) ^ 2}}^2 + (\\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - \\cfrac{p\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + q\\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + r\\sqrt{(a - b) ^ 2 + (p - q) ^ 2}}{\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \\sqrt{(a - b) ^ 2 + (p - q) ^ 2}})^2 \\ =(\\cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - a)^2 + (\\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - p)^2 - \\sqrt{(\\cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - a)^2 +(\\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - p)^2} \\cdot \\sqrt{(\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \\sqrt{(a - b) ^ 2 + (p - q) ^ 2}) \\cdot (-\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} {+ \\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \\sqrt{(a - b) ^ 2 + (p - q) ^ 2}) \\cdot (\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} - \\sqrt{(c - a) ^ 2 + (r - p) ^ 2}}+ \\sqrt{(a - b) ^ 2 + (p - q) ^ 2}) }\\cdot (\\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \\sqrt{(c - a) ^ 2 + (r - p) ^ 2} - \\sqrt{(a - b) ^ 2 + (p - q) ^ 2} $\n",
+  "wordCount" : "476",
+  "inLanguage": "zh",
+  "datePublished": "2021-12-05T13:40:59+08:00",
+  "dateModified": "2021-12-05T13:40:59+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "True"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://xgjdxj.github.io/post/tynfms/liweis_formula/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "徐冠军",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://xgjdxj.github.io/img/logo.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://xgjdxj.github.io/" accesskey="h" title="徐冠军 (Alt + H)">徐冠军</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://xgjdxj.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/archives" title="⏱归档">
+                    <span>⏱归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/xgjnb" title="📚冠军">
+                    <span>📚冠军</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/tynfms" title="✏️TYNFMS">
+                    <span>✏️TYNFMS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://xgjdxj.github.io/">主页</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/">Posts</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/tynfms/">TYNFMS</a></div>
+    <h1 class="post-title">
+      李伟恒等式
+    </h1>
+    <div class="post-description">
+      李伟恒等式
+    </div>
+    <div class="post-meta">
+
+
+
+
+
+
+
+
+
+
+创建:&nbsp;<span title='2021-12-05 13:40:59 +0800 CST'>2021-12-05</span>&nbsp;|&nbsp;更新:&nbsp;2021-12-05&nbsp;|&nbsp;字数:&nbsp;476字&nbsp;|&nbsp;时长: 1分钟&nbsp;|&nbsp;True
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>请用鼠标从左向右拖拽观赏（斜眼笑）</p>
+<p>$ \cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - \cfrac{a\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + b\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + c\sqrt{(a - b) ^ 2 + (p - q) ^ 2}}{\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \sqrt{(a - b) ^ 2 + (p - q) ^ 2}}^2 + (\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - \cfrac{p\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + q\sqrt{(c - a) ^ 2 + (r - p) ^ 2} + r\sqrt{(a - b) ^ 2 + (p - q) ^ 2}}{\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \sqrt{(a - b) ^ 2 + (p - q) ^ 2}})^2 \ =(\cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - a)^2 + (\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - p)^2 - \sqrt{(\cfrac{(a^2 + p^2)(q - r) + (b^2 + q^2)(r - p) + (c^2 + r^2)(p - q)}{2[a(q - r) + b(r - p) + c(p - q)]} - a)^2 +(\cfrac{(a^2 + p^2)(b - c) + (b^2 + q^2)(c - a) + (c^2 + r^2)(a - b)}{2[p(b - c) + q(c - a) + r(a - b)]} - p)^2} \cdot \sqrt{(\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \sqrt{(a - b) ^ 2 + (p - q) ^ 2}) \cdot (-\sqrt{(b - c) ^ 2 + (q - r) ^ 2} {+ \sqrt{(c - a) ^ 2 + (r - p) ^ 2} + \sqrt{(a - b) ^ 2 + (p - q) ^ 2}) \cdot (\sqrt{(b - c) ^ 2 + (q - r) ^ 2} - \sqrt{(c - a) ^ 2 + (r - p) ^ 2}}+ \sqrt{(a - b) ^ 2 + (p - q) ^ 2}) }\cdot (\sqrt{(b - c) ^ 2 + (q - r) ^ 2} + \sqrt{(c - a) ^ 2 + (r - p) ^ 2} - \sqrt{(a - b) ^ 2 + (p - q) ^ 2} $</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://xgjdxj.github.io/tags/phoenixliwei/">PhoenixLiwei</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/tynfms/">TYNFMS</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/%E4%BB%A3%E6%95%B0/">代数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://xgjdxj.github.io/post/tynfms/number-theory-congruence/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>同余</span>
+  </a>
+  <a class="next" href="https://xgjdxj.github.io/post/hidden/great_works_of_literature/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>冠军教文学</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+    repo="xgjdxj/xgjcomments"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://xgjdxj.github.io/">徐冠军</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style></body>
+
+</html>

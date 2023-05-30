@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>同余 | 徐冠军</title>
+<meta name="keywords" content="数论, TYNFMS">
+<meta name="description" content="数论——同余">
+<meta name="author" content="Champion Xu">
+<link rel="canonical" href="https://xgjdxj.github.io/post/tynfms/number-theory-congruence/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="apple-touch-icon" href="https://xgjdxj.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://xgjdxj.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+<meta property="og:title" content="同余" />
+<meta property="og:description" content="数论——同余" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xgjdxj.github.io/post/tynfms/number-theory-congruence/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-12T21:53:28+08:00" />
+<meta property="article:modified_time" content="2021-12-12T21:53:28+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="同余"/>
+<meta name="twitter:description" content="数论——同余"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://xgjdxj.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "TYNFMS",
+      "item": "https://xgjdxj.github.io/post/tynfms/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "同余",
+      "item": "https://xgjdxj.github.io/post/tynfms/number-theory-congruence/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "同余",
+  "name": "同余",
+  "description": "数论——同余",
+  "keywords": [
+    "数论", "TYNFMS"
+  ],
+  "articleBody": "前言 小冠军是一个非常有志向的人，他立志解出下面一道题：\n小冠军的梦想：证明：方程$x^3+y^3=z^3$没有$xyz\\neq 0$的整数解。 然而，现在的小冠军还是一个菜稽，对这道题无从下手。徐冠军老师看到了这一幕，告诉他：在解决这道题目之前，你需要了解有关同余的知识。\n同余 定义1：设$m\\neq 0$，若$m|(a-b)$，则称$m$为模，$a$同余于$b$模$m$，记作： $$a\\equiv b(mod\\ m) \\tag{1}$$ 说白了，就是$a$除$m$的余数等于$b$除$m$的余数，用带余除法就是说$a=q_1m+r$，$b=q_2m+r$（若无特别说明，数论中变量的值都是整数）。 在(1)式中，若$0\\leqslant b",
+  "wordCount" : "4362",
+  "inLanguage": "zh",
+  "datePublished": "2021-12-12T21:53:28+08:00",
+  "dateModified": "2021-12-12T21:53:28+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Champion Xu"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://xgjdxj.github.io/post/tynfms/number-theory-congruence/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "徐冠军",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://xgjdxj.github.io/img/logo.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://xgjdxj.github.io/" accesskey="h" title="徐冠军 (Alt + H)">徐冠军</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://xgjdxj.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/archives" title="⏱归档">
+                    <span>⏱归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/xgjnb" title="📚冠军">
+                    <span>📚冠军</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/tynfms" title="✏️TYNFMS">
+                    <span>✏️TYNFMS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://xgjdxj.github.io/">主页</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/">Posts</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/tynfms/">TYNFMS</a></div>
+    <h1 class="post-title">
+      同余
+    </h1>
+    <div class="post-description">
+      数论——同余
+    </div>
+    <div class="post-meta">
+
+
+
+
+
+
+
+
+
+
+创建:&nbsp;<span title='2021-12-12 21:53:28 +0800 CST'>2021-12-12</span>&nbsp;|&nbsp;更新:&nbsp;2021-12-12&nbsp;|&nbsp;字数:&nbsp;4362字&nbsp;|&nbsp;时长: 9分钟&nbsp;|&nbsp;Champion Xu
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                    <li>
+                        <a href="#%e5%90%8c%e4%bd%99" aria-label="同余">同余</a></li>
+                    <li>
+                        <a href="#%e5%90%8c%e4%bd%99%e7%b1%bb%e4%b8%8e%e5%89%a9%e4%bd%99%e7%b3%bb" aria-label="同余类与剩余系">同余类与剩余系</a><ul>
+                            
+                    <li>
+                        <a href="#%e4%be%8b%e9%a2%98" aria-label="例题">例题</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>小冠军是一个非常有志向的人，他立志解出下面一道题：</p>
+<p><strong>小冠军的梦想</strong>：证明：方程$x^3+y^3=z^3$没有$xyz\neq 0$的整数解。
+然而，现在的小冠军还是一个菜稽，对这道题无从下手。徐冠军老师看到了这一幕，告诉他：在解决这道题目之前，你需要了解有关<strong>同余</strong>的知识。</p>
+<h2 id="同余">同余<a hidden class="anchor" aria-hidden="true" href="#同余">#</a></h2>
+<p><strong>定义1</strong>：设$m\neq 0$，若$m|(a-b)$，则称$m$为模，$a$同余于$b$模$m$，记作：
+$$a\equiv b(mod\ m) \tag{1}$$
+说白了，就是$a$除$m$的余数等于$b$除$m$的余数，用带余除法就是说$a=q_1m+r$，$b=q_2m+r$（若无特别说明，数论中变量的值都是整数）。
+在(1)式中，若$0\leqslant b&lt;m$，则称$b$是$a$对模$m$的最小非负剩余。若$1\leqslant b\leqslant m$，则称$b$是$a$对模$m$的最小正剩余。若$-\frac{m}{2} &lt; b \leqslant\frac{m}{2}$，则称$b$是$a$对模$m$的绝对最小剩余。
+同余有哪些性质呢？
+首先，同余满足交换律，也具有传递性。
+其次，模相同的同余式可以相加，也可以相乘，即满足$a\equiv b(mod\ m)\quad c\equiv d(mod\ m)\Rightarrow a+c\equiv b+d(mod\ m)\quad ac\equiv bd(mod\ m)$。</p>
+<p><strong>定义2</strong>：设$f(x)=a_nx^n+\cdots+a_0$，$g(x)=b_nx^n+\cdots+b_0$是两个整系数多项式，当$a_j\equiv b_j(mod\ m)$，$0\leqslant j \leqslant n$时，称$f(x)$同余于$g(x)$模$m$，记为：
+$$f(x)\equiv g(x)(mod\ m) \tag{2}$$</p>
+<p><strong>性质1</strong>：若(2)成立，则对于任意$x\in Z$，均有$f(x)\equiv g(x)(mod\ m)$。</p>
+<p><strong>性质2</strong>：设$d\geqslant 1$，$d|m$，若(1)成立，则$a\equiv b(mod\ d)$。</p>
+<p><strong>性质3</strong>：设$d\neq 0$，则同余式(1)等价于$da\equiv db(mod\ |d|m)$。</p>
+<p><strong>性质4</strong>：$ca\equiv cb(mod\ m)\Leftrightarrow a\equiv b(mod\ \frac{m}{(m,c)})$。</p>
+<p><strong>性质5</strong>：若$m\geqslant 1$,$(a,m)=1$，则存在$c$使得
+$$ca\equiv 1(mod\ m) \tag{3}$$
+这时候，我们称$c$为$a$对模$m$的逆，记作$a^{-1}(mod\ m)$或$a^{-1}$。
+证明：由贝祖定理知道存在$x_0$和$y_0$使得$ax_0+my_0=1$，取$c=x_0$，即满足要求。
+<strong>性质6</strong>：同余式组$a\equiv b(mod\ m_j),1\leqslant j\leqslant k$同时成立的充分必要条件是$a\equiv b(mod\ [m_1,\cdots,m_k])$。</p>
+<h2 id="同余类与剩余系">同余类与剩余系<a hidden class="anchor" aria-hidden="true" href="#同余类与剩余系">#</a></h2>
+<p><strong>定义1</strong>：把$Z$分为若干两两不相交的集合，使同一集合中任意两数对模$m$一定同余，每一个这样的集合称为$m$的<strong>同余类</strong>(<strong>剩余类</strong>)。
+我们用$r\ mod\ m$表示$r$所属的模$m$的同余类。
+例如，对$m=3$而言，整数集$Z$可被分成三个两两不相交的集合：
+$0\ mod\ 3={a|a \ mod\ 0(mod\ 3),a\in Z}$
+$1\ mod\ 3={a|a \ mod\ 1(mod\ 3),a\in Z}$
+$2\ mod\ 3={a|a \ mod\ 2(mod\ 3),a\in Z}$
+若再向下推，可以轻轻松松得到$0\ mod\ 3=3\ mod\ 3$。于是，我们有$r\ mod\ m=s\ mod\ m\Leftrightarrow r\equiv s(mod\ m)$。</p>
+<p><strong>定义2</strong>：一组数$y_1,\cdots,y_s$中，对任意$a$有且仅有一个$y_i$使得$y_j\equiv a(mod\ m)$，则称$y_1,\cdots,y_s$为模$m$的<strong>完全剩余系</strong>，也称剩余系。
+例如，对$m=3$而言，在$0\ mod\ 3,1\ mod\ 3,2\ mod\ 3$三个集合中各取一个数，如$6、7、8$，这就是模$3$的完全剩余系。由此我们易得$s=m$。
+类似于同余，剩余系也有特殊的：
+$0,1,\cdots,m-1$是模$m$的最小非负完全剩余系（同理有最大非正完全剩余系），
+$1,2,\cdots,m$是模$m$的最小正完全剩余系（同理有最大负完全剩余系），
+$-[\frac{m}{2}],\cdots,-[-\frac{m}{2}]-1$是模$m$的绝对最小完全剩余系。</p>
+<p><strong>定义3</strong>：若$(r,m)=1$，则模$m$的同余类$r\ mod\ m$称为模$m$的<strong>既约同余类</strong>。
+模$m$的所有既约同余类的个数记为$\varphi(m)$，称为<strong>欧拉函数</strong>。</p>
+<p><strong>定义4</strong>：对于一组数$z_1,\cdots,z_t$，若$(z_j,m)=1,i\leqslant j\leqslant t$，及对任意$a$，$(a,m)=1$，有且只有一个$z_j$是的$a\equiv z_j(mod\ m)$，则这组数为模$m$的<strong>既约剩余系</strong>。
+例如对$12$而言，它的既约同余类为$1\ mod\ 12,5\ mod\ 12,7\ mod\ 12,11\ mod\ 12$，则$\varphi(12)=4$。
+下面介绍一些定理。</p>
+<p><strong>定理1</strong>：设$m=m_1m_2$，$x^{(1)}_i (1\leqslant i\leqslant m_1)$是模$m_1$的完全剩余系，
+<code>$x^{(2)}_j$</code> 是模$m_2$的完全剩余系，那么<code>$x_{ij}=x^{(1)}_1+m_1x^{(2)}_j$</code>是模$m$的完全剩余系。</p>
+<p>证明：	
+易知$ x_{ij} $中有$m_1m_2=m$个数。
+若存在$x_{i1},x_{i2},x_{j1},x_{j2}$，使得 <code>$ x^{(1)}_{i1}+m_1x^{(1)}_{j1} \equiv x_{i_1j_1} \equiv x_{i_2j_2} \equiv x^{(1)}_{i_2}+m_1x^{(1)}_{j_2}(mod\  m_1m_2) $</code>，则必有 <code>$x^{(1)}_{i_1}\equiv x^{(2)}_{i_2}(mod\ m_1)$</code>。
+因为<code>$x^{(1)}_{i_1}$</code>和<code>$x^{(2)}_{i_2}$</code>都在模$m_1$的完全剩余系中，所以<code>$x^{(1)}_{i_1}=x^{(2)}_{i_2}$</code>，从而<code>$x^{(1)}_{j_1}\equiv x^{(2)}_{j_2}(mod\ m_2)$</code>。
+同理，我们有<code>$x^{(1)}_{j_1}=x^{(2)}_{j_2}$</code>，则<code>$i_1=i_2,j_1=j_2$</code>，即<code>$x_{ij}$</code>中两两对$m$不同余，因此<code>$x_{ij}$</code>是模<code>$m$</code>的完全剩余系。</p>
+<p>总结：我们要证明某个集合是模$m$的完全剩余系，有两步：
+(1) 证明这个集合有$m$个数。
+(2) 证明这个集合元素两两不同余。</p>
+<p><strong>定理2</strong>：设$m=m_1m_2\cdots m_k$，</p>
+<p>及<code>$x_{i_1 i_2\cdots i_k}=x^{(1)}_{i_1} + m_1 x^{(2)}_{i_2}+ \cdots +m_1m_2 \cdots m_{k-1}x^{(k)}_{i_k}$,$x^{(j)}_{ij}(i\leqslant j\leqslant k)$</code>是模<code>$m_j$</code>的完全剩余系时，<code>$x_{i_1i_2\cdots i_k}$</code>为模<code>$m$</code>的完全剩余系。</p>
+<p>这个定理的证明，若还是使用上述方法，则十分复杂，这里不妨用归纳法证明。</p>
+<p>证明：由上面可知当$k=2$时结论成立。设对$k=n(n\geqslant 2)$时结论成立，则$k=n+1$时，
+设$\overline{m_n}=m_1m_2\cdots m_n$及$\overline{x}^{(n)}=x^{(1)}+m_1x^{(2)}+\cdots+m_1m_2\cdots m_{n-1}x^{(n)}$，则$$x=\overline{x}^{(n)}+\overline{m_n}x^{(n+1)} \tag{4}$$
+而由归纳假设，我们知$\overline{x}^{(n)}$为$m_n$的完全剩余系，而结合上式(4)和当$k=2$时结论成立，我们知道$\overline{x}^{(n+1)}$为$\overline{m_n}m_{n+1}=\overline{m_{n+1}}$的完全剩余系，即结论对$k=n+1$时成立。证毕。</p>
+<p>总结：这里能想到使用数学归纳法的原因：
+(1)结构相似。
+(2)$k$是正整数。</p>
+<p><strong>定理3</strong>：设<code>$m=m_1m_2$</code>，且<code>$(m_1,m_2)=1$</code>，若<code>$x^{(1)}_i (1\leqslant i\leqslant s)$</code>是模<code>$m_1$</code>的完全剩余系，<code>$x^{(2)}_j(1\leqslant j\leqslant t)$</code>是模<code>$m_2$</code>的完全剩余系，则<code>$x_{ij}=m_2x^{(1)}_i+m_1x^{(2)}_j (1\leqslant i\leqslant s,1\leqslant j\leqslant t)$</code>是<code>$x_{ij}$</code>为模<code>$m$</code>的完全（或既约）剩余系的充分必要条件。</p>
+<p><strong>定理4</strong>：设$m=m_1m_2\cdots m_k$，$m_1,m_2,\cdots,m_k$两两既约，设$m=m_jM_j(1\leqslant j\leqslant k)$及$x=M_1x^{(1)}+\cdots+M_kx^{(k)}$，则$x$遍历模$m$的完全（或既约）剩余系的充分必要条件是$x^{(1)},\cdots,x^{(k)}$也分别遍历模$m_1,\cdots,m_k$的完全（或既约）剩余系。</p>
+<p>这两个定理的证明的思想方法与上面类似，请读者自证。</p>
+<p>介绍完了一些定义定理，下面来看看它们的应用。</p>
+<h3 id="例题">例题<a hidden class="anchor" aria-hidden="true" href="#例题">#</a></h3>
+<p><strong>例1</strong>：用模$3$的剩余系表示模$3^n(n\geqslant 2)$的剩余系。
+解：看定理2，当$m_1=m_2=\cdots=m_k=n$时，我们得到下面的引论：
+当$x^{(1)}$遍历模$m$的完全（既约）剩余系，$x^{(j)}(2\leqslant j\leqslant k)$分别遍历模$n$的完全剩余系时，
+$$x=x^{(1)}+nx^{(2)}+n^2x^{(3)}+\cdots+n^{k-1}x^{(k)}$$
+遍历模$n^k$的完全（既约）剩余系。
+由上我们易知$x=x^{(1)}+3x^{(2)}+3^2x^{(3)}+\cdots+3^{k-1}x^{(k)}$</p>
+<p>实际上，上述问题为奥数中一道经典题目：有$n$个质量为$1g$，$3g$，$3^2g$，$\cdots$，$3^{n-1}g$的砝码，可以在天平上测出$1g$到$\frac{3^n-1}{2}g$之间的物体质量（误差小于$1g$）。</p>
+<p><strong>例2</strong>：求模<code>$13$</code>的一组完全剩余系<code>$r_1,r_2,\cdots,r_13$</code>，满足<code>$r_i\equiv i(mod\ 3)，r_i\equiv 0(mod 7) (1\leqslant i\leqslant 13)$</code>。
+解：
+设<code>$m_1=3$</code>，<code>$m_2=7$</code>，<code>$m_3=13$</code>，<code>$m=m_1m_2m_3$</code>，则<code>$M_1=91$</code>，<code>$M_2=39$</code>，<code>$M_3=21$</code>。
+设<code>$x^{(i)}_i$</code>为模<code>$13$</code>的完全剩余系，<code>$i'$</code>为<code>$i$</code>对模<code>$3$</code>的绝对最小剩余，则
+<code>$$r_i=21\cdot x^{(1)}_i+91i'+39\cdot 0(1\leqslant i\leqslant 13)\tag{4}$$</code>
+即为我们所要的模<code>$13$</code>的完全剩余系。取<code>$x^{(1)}_i(1\leqslant i\leqslant 13)$</code>依次为<code>$-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6$</code>，则<code>$r_i$</code>依次为<code>$-35,-196,-84,28,133,-21,91,-70,42,154,-7,105,217$</code>。</p>
+<p>那为什么(4)能使得结论成立呢？
+设存在<code>$i_1,i_2$</code>使得
+<code>$$21x^{(1)}_{i_1}+91i_1'\equiv 21x^{(1)}_{i_2}+91i_2'(mod\ 13)$$</code>
+则<code>$x^{(1)}_{i_1}\equiv x^{(1)}_{i_2}(mod\ 13)$</code>，因为它们都在模<code>$13$</code>的一组完全剩余系内，所以<code>$i_1=i_2$</code>，所以<code>$r_i$</code>中两两对模<code>$13$</code>不同余，又因为其中有<code>$13$</code>个数，所以<code>$r_i$</code>是模<code>$13$</code>的一个完全剩余系。</p>
+<p><strong>例3</strong>：若$m\geqslant 2$，则$m$的最小正既约剩余系之和为$\frac{m\varphi(m)}{2}$。
+证明：若$0&lt;r_j&lt;\frac{m}{2}$，$r_j$为$m$的既约剩余类，则$(m-r_j,m)=(-r_j,m)=(r_j,m)=1$。
+设$m$的最小正既约剩余系为$r_1,r_2,\cdots,r_{2n}$，其和为$S$，
+因为$r_j+r_{2n+1-j}=m$，所以$S=r_1+r_2+\cdots+r_{n-1}+r_n+r_{n+1}+r_{n+2}+\cdots+r_{2n}$
+$=(r_1+r_{2n})+(r_2+r_{2n-1})+\cdots+(r_{n-1}+r_{n+2})+(r_n+r_(n+1))$
+$=\frac{\varphi(m)}{2}\cdot m$，证毕。</p>
+<p><strong>例4</strong>：设$p_1,\cdots,p_k$为$k$个不同的素数，则$\varphi(p_1\cdots p_k)=(p_1-1)(p_2-1)\cdots(p_k-1)$。
+证明：由容斥原理知
+$$\varphi(p_1\cdots p_k)=p_1\cdots p_k-\sum_{1\leqslant j\leqslant k}\frac{p_1\cdots p_k}{p_j}+\sum_{i\leqslant i&lt;j\leqslant k}\frac{p_1\cdots p_k}{p_ip_j}+\cdots+(-1)^n=(p_1-1)(p_2-1)\cdots(p_k-1)$$
+证毕。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://xgjdxj.github.io/tags/%E6%95%B0%E8%AE%BA/">数论</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/tynfms/">TYNFMS</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://xgjdxj.github.io/post/tynfms/liweis_formula/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>李伟恒等式</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+    repo="xgjdxj/xgjcomments"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://xgjdxj.github.io/">徐冠军</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style></body>
+
+</html>

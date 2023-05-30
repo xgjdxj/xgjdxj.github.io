@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>帕斯卡定理 | 徐冠军</title>
+<meta name="keywords" content="几何, TYNFMS">
+<meta name="description" content="帕斯卡定理（徐冠军大定理）">
+<meta name="author" content="许个头发vb170">
+<link rel="canonical" href="https://xgjdxj.github.io/post/tynfms/geometry-pascal/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://xgjdxj.github.io/img/logo.png">
+<link rel="apple-touch-icon" href="https://xgjdxj.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://xgjdxj.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+<meta property="og:title" content="帕斯卡定理" />
+<meta property="og:description" content="帕斯卡定理（徐冠军大定理）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xgjdxj.github.io/post/tynfms/geometry-pascal/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-11T10:07:08+08:00" />
+<meta property="article:modified_time" content="2021-09-11T10:07:08+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="帕斯卡定理"/>
+<meta name="twitter:description" content="帕斯卡定理（徐冠军大定理）"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://xgjdxj.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "TYNFMS",
+      "item": "https://xgjdxj.github.io/post/tynfms/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "帕斯卡定理",
+      "item": "https://xgjdxj.github.io/post/tynfms/geometry-pascal/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "帕斯卡定理",
+  "name": "帕斯卡定理",
+  "description": "帕斯卡定理（徐冠军大定理）",
+  "keywords": [
+    "几何", "TYNFMS"
+  ],
+  "articleBody": "帕斯卡定理 （该定理曾由XGJ同学用建系的方法证明，故又称为XGJ大定理） 帕斯卡定理，指任何圆锥曲线内接六边形（包括退化的六边形，比如有六个点的四边形）其三个对边的交点共线。为了研究方便，我们只研究在圆中的情况。 如上图，$X、Y、Z$三点共线。\n帕斯卡定理的证明 为了更好地讲述帕斯卡定理的证明，我们要先来了解一个定理。\n梅涅劳斯定理 如上图，若$D、E、F$三点共线，则有$\\frac{AD}{DB}\\cdot\\frac{BF}{CF}\\cdot\\frac{CE}{EA}=1$，此时我们称三角形$ABC$为梅氏三角形，$DEF$为梅氏线。\n证明： 过点$A$作$AG//BC$交$FD$延长线于$G$。 易得$\\triangle AGD\\sim\\triangle BFD,\\triangle AGE\\sim\\triangle CFE$, $\\therefore \\frac{AD}{DB}=\\frac{AG}{BF},\\frac{CE}{EA}=\\frac{CF}{AG}$, $\\therefore \\frac{AD}{DB}\\cdot\\frac{BF}{CF}\\cdot\\frac{CE}{EA}=\\frac{AG}{BF}\\cdot\\frac{CF}{AG}\\cdot\\frac{BF}{CF}=1$,证毕。\n梅涅劳斯定理逆定理 还是这张图，如果能满足$\\frac{AD}{DB}\\cdot\\frac{BF}{CF}\\cdot\\frac{CE}{EA}=1$，则能得到$D、E、F$三点共线。该结论使用同一法即可证明，不再赘述。\n证明方法一：梅涅劳斯定理法 延长$DB$和$EA$交于点$G$，记$CF$和$BD$交于点$M$，$AE$和$CF$交于$N$。 我们要证$X、Y、Z$三点共线，只要证明$\\frac{GX}{XM}\\cdot\\frac{MY}{YN}\\cdot\\frac{NZ}{ZG}=1$， 我们以$\\triangle GMN$为梅氏三角形，分别以$BZF、AYD、CXE$为梅氏线运用梅涅劳斯定理，可以得到三个式子： $$\\frac{GB}{BM}\\cdot\\frac{MF}{FN}\\cdot\\frac{NZ}{ZG}=1 \\rightarrow \\frac{NZ}{ZG}=\\frac{BM}{GB}\\cdot\\frac{FN}{MF}$$ $$\\frac{GD}{DM}\\cdot\\frac{MY}{YN}\\cdot\\frac{NA}{AG}=1 \\rightarrow \\frac{MY}{YN}=\\frac{DM}{GD}\\cdot\\frac{AG}{NA}$$ $$\\frac{GX}{XM}\\cdot\\frac{MC}{CN}\\cdot\\frac{NE}{EG}=1 \\rightarrow \\frac{GX}{XM}=\\frac{CN}{MC}\\cdot\\frac{EG}{NE}$$ 上面三个式子相乘，可以得到 $$\\frac{GX}{XM}\\cdot\\frac{MY}{YN}\\cdot\\frac{NZ}{ZG}=\\frac{(GA\\cdot GE)(BM\\cdot DM)(CN\\cdot FN)}{(GB\\cdot GD)(MC\\cdot MF)(NA\\cdot NE)}$$ 由圆幂定理可以知道$GA\\cdot GE=GB\\cdot GD，BM\\cdot DM=MC\\cdot MF，CN\\cdot FN=NA\\cdot NE$ 于是便有$\\frac{GX}{XM}\\cdot\\frac{MY}{YN}\\cdot\\frac{NZ}{ZG}=1$，证毕。\n共角定理 上面的证明貌似能够证明所有的情况，但是接下来就是一个反例！ 上图中，$CE//BF$，$BD//AE$，也就是说延长线段构造梅氏三角形的方法不适用了！我们该何去何从？ 我们需要换另外一种证明方法，在那之前我们要了解另外一个简单的定理。 共角定理 两个三角形有一对角相等或互补时，其面积之比等于其角的两边乘积之比，例如上图中就有： $$\\frac{S_{\\triangle ADE}}{S_{\\triangle ABC}}=\\frac{AD\\cdot AE}{AB\\cdot AC}$$ $$\\frac{S_{\\triangle AFG}}{S_{\\triangle ABC}}=\\frac{AF\\cdot AG}{AB\\cdot AC}$$ 证明也非常简单，只要用三角形面积公式$S_\\triangle=\\frac{1}{2}ab\\sin C$就行了。\n证明方法二：面积法 为了证明$X、Y、Z$三点共线，我们只需要证明$CF、AD、XZ$三线共点就行了。如何证明？我们采用同一法。 由上面两张图，我们只需要证明$\\frac{XY_1}{Y_1Z}=\\frac{XY_2}{Y_2Z}$ 如上面两张图作辅助线。 $$\\frac{XY_1}{Y_1Z}=\\frac{S_{\\triangle XCF}}{S_{\\triangle ZCF}}=\\frac{S_{\\triangle XCF}}{S_{\\triangle AZF}}\\cdot\\frac{S_{\\triangle DCX}}{S_{\\triangle ZCF}}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}$$ 因为$\\angle XCF=\\angle ZAF$，运用共角定理可知$\\frac{S_{\\triangle XCF}}{S_{\\triangle AZF}}=\\frac{XC\\cdot CF}{AZ\\cdot AF}$，同理可知$\\frac{S_{\\triangle DCX}}{S_{\\triangle ZCF}}=\\frac{CD\\cdot DX}{CF\\cdot ZF}$，于是有 $$\\frac{XY_1}{Y_1Z}=\\frac{XC\\cdot CF}{AZ\\cdot AF}\\cdot\\frac{CD\\cdot DX}{CF\\cdot ZF}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}=\\frac{XC\\cdot CD\\cdot DX}{AZ\\cdot ZF \\cdot FA}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}$$ 同理有 $$\\frac{XY_2}{Y_2Z}=\\frac{S_{\\triangle DXA}}{S_{\\triangle DZA}}=\\frac{S_{\\triangle DXA}}{S_{\\triangle FAZ}}\\cdot\\frac{S_{\\triangle DCX}}{S_{\\triangle DZA}}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}=$$ $$\\frac{DA\\cdot DX}{FZ\\cdot FA}\\cdot\\frac{DC\\cdot CX}{DA\\cdot AZ}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}=\\frac{DC\\cdot CX\\cdot DX}{AZ\\cdot ZF\\cdot AF}\\cdot\\frac{S_{\\triangle AZF}}{S_{\\triangle DCX}}$$ 上下两式相等，$\\frac{XY_1}{Y_1Z}=\\frac{XY_2}{Y_2Z}$，命题得证。\n帕斯卡定理的退化及其应用 文章的一开头我们就说了，任何的六边形，不管是什么首尾连接方式，不管是什么退化，都能满足帕斯卡定理，因此这是一个很强的定理，在证明三点共线时会遇见它。 这两个都是帕斯卡定理在形外的版本。\n题目描述 尝试证明以上两个帕斯卡定理的变形。 提示 对照上面的证明方法，形变而法不变！ 不过，如果六边形退化了呢？ 当两个点不断接近，直到最终重合时，两点间的连线就会退化为切线，如下图： 其中$CZ$ 为圆的切线，可以发现$X、Y、Z$仍然三点共线。同理，其他的点也可以逐一重合，图形不断退化，因此即便一个看似普通的三点共线，也有可能是帕斯卡定理的退化！ 题目 设$H$是锐角$\\triangle ABC$的垂心，$M$是$BC$的中点，以$AH$为直径作圆与AB、AC分别交于点$D、E$，$AH$交$DE$于$P$，过$H$作$AH$的垂线交$DM$于点$Q$，求证：$P、Q、B$三点共线。 提示 有两条切线。 思路 证明 DQ 和 HQ 是两条切线，即可对圆内接六边形ADDHHE使用帕斯卡定理。 ",
+  "wordCount" : "1829",
+  "inLanguage": "zh",
+  "datePublished": "2021-09-11T10:07:08+08:00",
+  "dateModified": "2021-09-11T10:07:08+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "许个头发vb170"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://xgjdxj.github.io/post/tynfms/geometry-pascal/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "徐冠军",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://xgjdxj.github.io/img/logo.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://xgjdxj.github.io/" accesskey="h" title="徐冠军 (Alt + H)">徐冠军</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://xgjdxj.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/archives" title="⏱归档">
+                    <span>⏱归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/xgjnb" title="📚冠军">
+                    <span>📚冠军</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://xgjdxj.github.io/post/tynfms" title="✏️TYNFMS">
+                    <span>✏️TYNFMS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://xgjdxj.github.io/">主页</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/">Posts</a>&nbsp;»&nbsp;<a href="https://xgjdxj.github.io/post/tynfms/">TYNFMS</a></div>
+    <h1 class="post-title">
+      帕斯卡定理
+    </h1>
+    <div class="post-description">
+      帕斯卡定理（徐冠军大定理）
+    </div>
+    <div class="post-meta">
+
+
+
+
+
+
+
+
+
+
+创建:&nbsp;<span title='2021-09-11 10:07:08 +0800 CST'>2021-09-11</span>&nbsp;|&nbsp;更新:&nbsp;2021-09-11&nbsp;|&nbsp;字数:&nbsp;1829字&nbsp;|&nbsp;时长: 4分钟&nbsp;|&nbsp;许个头发vb170
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e5%b8%95%e6%96%af%e5%8d%a1%e5%ae%9a%e7%90%86" aria-label="帕斯卡定理">帕斯卡定理</a></li>
+                    <li>
+                        <a href="#%e5%b8%95%e6%96%af%e5%8d%a1%e5%ae%9a%e7%90%86%e7%9a%84%e8%af%81%e6%98%8e" aria-label="帕斯卡定理的证明">帕斯卡定理的证明</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%a2%85%e6%b6%85%e5%8a%b3%e6%96%af%e5%ae%9a%e7%90%86" aria-label="梅涅劳斯定理">梅涅劳斯定理</a></li>
+                    <li>
+                        <a href="#%e6%a2%85%e6%b6%85%e5%8a%b3%e6%96%af%e5%ae%9a%e7%90%86%e9%80%86%e5%ae%9a%e7%90%86" aria-label="梅涅劳斯定理逆定理">梅涅劳斯定理逆定理</a></li>
+                    <li>
+                        <a href="#%e8%af%81%e6%98%8e%e6%96%b9%e6%b3%95%e4%b8%80%e6%a2%85%e6%b6%85%e5%8a%b3%e6%96%af%e5%ae%9a%e7%90%86%e6%b3%95" aria-label="证明方法一：梅涅劳斯定理法">证明方法一：梅涅劳斯定理法</a></li>
+                    <li>
+                        <a href="#%e5%85%b1%e8%a7%92%e5%ae%9a%e7%90%86" aria-label="共角定理">共角定理</a></li>
+                    <li>
+                        <a href="#%e8%af%81%e6%98%8e%e6%96%b9%e6%b3%95%e4%ba%8c%e9%9d%a2%e7%a7%af%e6%b3%95" aria-label="证明方法二：面积法">证明方法二：面积法</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%b8%95%e6%96%af%e5%8d%a1%e5%ae%9a%e7%90%86%e7%9a%84%e9%80%80%e5%8c%96%e5%8f%8a%e5%85%b6%e5%ba%94%e7%94%a8" aria-label="帕斯卡定理的退化及其应用">帕斯卡定理的退化及其应用</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h2 id="帕斯卡定理">帕斯卡定理<a hidden class="anchor" aria-hidden="true" href="#帕斯卡定理">#</a></h2>
+<p>（该定理曾由XGJ同学用建系的方法证明，故又称为XGJ大定理）
+帕斯卡定理，指任何圆锥曲线内接六边形（包括退化的六边形，比如有六个点的四边形）其三个对边的交点共线。为了研究方便，我们只研究在圆中的情况。
+<img loading="lazy" src="/img/1631331410909.PNG" alt=""  />
+
+如上图，$X、Y、Z$三点共线。</p>
+<h2 id="帕斯卡定理的证明">帕斯卡定理的证明<a hidden class="anchor" aria-hidden="true" href="#帕斯卡定理的证明">#</a></h2>
+<p>为了更好地讲述帕斯卡定理的证明，我们要先来了解一个定理。</p>
+<h3 id="梅涅劳斯定理">梅涅劳斯定理<a hidden class="anchor" aria-hidden="true" href="#梅涅劳斯定理">#</a></h3>
+<p><img loading="lazy" src="/img/1631346545573.PNG" alt=""  />
+
+如上图，若$D、E、F$三点共线，则有$\frac{AD}{DB}\cdot\frac{BF}{CF}\cdot\frac{CE}{EA}=1$，此时我们称三角形$ABC$为梅氏三角形，$DEF$为梅氏线。</p>
+<p>证明：
+<img loading="lazy" src="/img/1631346680957.PNG" alt=""  />
+
+过点$A$作$AG//BC$交$FD$延长线于$G$。
+易得$\triangle AGD\sim\triangle BFD,\triangle AGE\sim\triangle CFE$,
+$\therefore \frac{AD}{DB}=\frac{AG}{BF},\frac{CE}{EA}=\frac{CF}{AG}$,
+$\therefore \frac{AD}{DB}\cdot\frac{BF}{CF}\cdot\frac{CE}{EA}=\frac{AG}{BF}\cdot\frac{CF}{AG}\cdot\frac{BF}{CF}=1$,证毕。</p>
+<h3 id="梅涅劳斯定理逆定理">梅涅劳斯定理逆定理<a hidden class="anchor" aria-hidden="true" href="#梅涅劳斯定理逆定理">#</a></h3>
+<p><img loading="lazy" src="/img/1631347403611.PNG" alt=""  />
+
+还是这张图，如果能满足$\frac{AD}{DB}\cdot\frac{BF}{CF}\cdot\frac{CE}{EA}=1$，则能得到$D、E、F$三点共线。该结论使用<strong>同一法</strong>即可证明，不再赘述。</p>
+<h3 id="证明方法一梅涅劳斯定理法">证明方法一：梅涅劳斯定理法<a hidden class="anchor" aria-hidden="true" href="#证明方法一梅涅劳斯定理法">#</a></h3>
+<p><img loading="lazy" src="/img/1631348146592.png" alt=""  />
+
+延长$DB$和$EA$交于点$G$，记$CF$和$BD$交于点$M$，$AE$和$CF$交于$N$。
+我们要证$X、Y、Z$三点共线，只要证明$\frac{GX}{XM}\cdot\frac{MY}{YN}\cdot\frac{NZ}{ZG}=1$，
+我们以$\triangle GMN$为梅氏三角形，分别以$BZF、AYD、CXE$为梅氏线运用梅涅劳斯定理，可以得到三个式子：
+$$\frac{GB}{BM}\cdot\frac{MF}{FN}\cdot\frac{NZ}{ZG}=1 \rightarrow \frac{NZ}{ZG}=\frac{BM}{GB}\cdot\frac{FN}{MF}$$
+$$\frac{GD}{DM}\cdot\frac{MY}{YN}\cdot\frac{NA}{AG}=1 \rightarrow \frac{MY}{YN}=\frac{DM}{GD}\cdot\frac{AG}{NA}$$
+$$\frac{GX}{XM}\cdot\frac{MC}{CN}\cdot\frac{NE}{EG}=1 \rightarrow \frac{GX}{XM}=\frac{CN}{MC}\cdot\frac{EG}{NE}$$
+上面三个式子相乘，可以得到
+$$\frac{GX}{XM}\cdot\frac{MY}{YN}\cdot\frac{NZ}{ZG}=\frac{(GA\cdot GE)(BM\cdot DM)(CN\cdot FN)}{(GB\cdot GD)(MC\cdot MF)(NA\cdot NE)}$$
+由圆幂定理可以知道$GA\cdot GE=GB\cdot GD，BM\cdot DM=MC\cdot MF，CN\cdot FN=NA\cdot NE$
+于是便有$\frac{GX}{XM}\cdot\frac{MY}{YN}\cdot\frac{NZ}{ZG}=1$，证毕。</p>
+<h3 id="共角定理">共角定理<a hidden class="anchor" aria-hidden="true" href="#共角定理">#</a></h3>
+<p>上面的证明貌似能够证明所有的情况，但是接下来就是一个反例！
+<img loading="lazy" src="/img/1631351618185.PNG" alt=""  />
+
+上图中，$CE//BF$，$BD//AE$，也就是说延长线段构造梅氏三角形的方法不适用了！我们该何去何从？
+我们需要换另外一种证明方法，在那之前我们要了解另外一个简单的定理。
+<strong>共角定理</strong>
+<img loading="lazy" src="/img/1631351745952.PNG" alt=""  />
+
+两个三角形有一对角相等或互补时，其面积之比等于其角的两边乘积之比，例如上图中就有：
+$$\frac{S_{\triangle ADE}}{S_{\triangle ABC}}=\frac{AD\cdot AE}{AB\cdot AC}$$
+$$\frac{S_{\triangle AFG}}{S_{\triangle ABC}}=\frac{AF\cdot AG}{AB\cdot AC}$$
+证明也非常简单，只要用三角形面积公式$S_\triangle=\frac{1}{2}ab\sin C$就行了。</p>
+<h3 id="证明方法二面积法">证明方法二：面积法<a hidden class="anchor" aria-hidden="true" href="#证明方法二面积法">#</a></h3>
+<p><img loading="lazy" src="/img/1631352160014.PNG" alt=""  />
+
+为了证明$X、Y、Z$三点共线，我们只需要证明$CF、AD、XZ$三线共点就行了。如何证明？我们采用同一法。
+<img loading="lazy" src="/img/1631356410990.PNG" alt=""  />
+
+<img loading="lazy" src="/img/1631353153947.PNG" alt=""  />
+
+由上面两张图，我们只需要证明$\frac{XY_1}{Y_1Z}=\frac{XY_2}{Y_2Z}$
+如上面两张图作辅助线。
+$$\frac{XY_1}{Y_1Z}=\frac{S_{\triangle XCF}}{S_{\triangle ZCF}}=\frac{S_{\triangle XCF}}{S_{\triangle AZF}}\cdot\frac{S_{\triangle DCX}}{S_{\triangle ZCF}}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}$$
+因为$\angle XCF=\angle ZAF$，运用共角定理可知$\frac{S_{\triangle XCF}}{S_{\triangle AZF}}=\frac{XC\cdot CF}{AZ\cdot AF}$，同理可知$\frac{S_{\triangle DCX}}{S_{\triangle ZCF}}=\frac{CD\cdot DX}{CF\cdot ZF}$，于是有
+$$\frac{XY_1}{Y_1Z}=\frac{XC\cdot CF}{AZ\cdot AF}\cdot\frac{CD\cdot DX}{CF\cdot ZF}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}=\frac{XC\cdot CD\cdot DX}{AZ\cdot ZF \cdot FA}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}$$
+同理有
+$$\frac{XY_2}{Y_2Z}=\frac{S_{\triangle DXA}}{S_{\triangle DZA}}=\frac{S_{\triangle DXA}}{S_{\triangle FAZ}}\cdot\frac{S_{\triangle DCX}}{S_{\triangle DZA}}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}=$$
+$$\frac{DA\cdot DX}{FZ\cdot FA}\cdot\frac{DC\cdot CX}{DA\cdot AZ}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}=\frac{DC\cdot CX\cdot DX}{AZ\cdot ZF\cdot AF}\cdot\frac{S_{\triangle AZF}}{S_{\triangle DCX}}$$
+上下两式相等，$\frac{XY_1}{Y_1Z}=\frac{XY_2}{Y_2Z}$，命题得证。</p>
+<h2 id="帕斯卡定理的退化及其应用">帕斯卡定理的退化及其应用<a hidden class="anchor" aria-hidden="true" href="#帕斯卡定理的退化及其应用">#</a></h2>
+<p>文章的一开头我们就说了，任何的六边形，不管是什么首尾连接方式，不管是什么退化，都能满足帕斯卡定理，因此这是一个很强的定理，在证明三点共线时会遇见它。
+<img loading="lazy" src="/img/1632114026510.PNG" alt=""  />
+
+<img loading="lazy" src="/img/1632186160442.PNG" alt=""  />
+
+这两个都是帕斯卡定理在形外的版本。</p>
+<details>
+    <summary> 题目描述</summary>
+    尝试证明以上两个帕斯卡定理的变形。
+</details>
+<details>
+    <summary> 提示</summary>
+    对照上面的证明方法，形变而法不变！
+</details>
+<p>不过，如果六边形退化了呢？
+当两个点不断接近，直到最终重合时，两点间的连线就会退化为切线，如下图：
+<img loading="lazy" src="/img/1633830046376.PNG" alt=""  />
+
+其中$CZ$ 为圆的切线，可以发现$X、Y、Z$仍然三点共线。同理，其他的点也可以逐一重合，图形不断退化，因此即便一个看似普通的三点共线，也有可能是帕斯卡定理的退化！
+<strong>题目</strong>
+设$H$是锐角$\triangle ABC$的垂心，$M$是$BC$的中点，以$AH$为直径作圆与AB、AC分别交于点$D、E$，$AH$交$DE$于$P$，过$H$作$AH$的垂线交$DM$于点$Q$，求证：$P、Q、B$三点共线。
+<img loading="lazy" src="/img/1633831222169.PNG" alt=""  />
+</p>
+<details>
+    <summary> 提示</summary>
+    有两条切线。
+</details>
+<details>
+    <summary> 思路</summary>
+    证明 DQ 和 HQ 是两条切线，即可对圆内接六边形ADDHHE使用帕斯卡定理。
+</details>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://xgjdxj.github.io/tags/%E5%87%A0%E4%BD%95/">几何</a></li>
+      <li><a href="https://xgjdxj.github.io/tags/tynfms/">TYNFMS</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://xgjdxj.github.io/post/tynfms/geometry-gravity/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>三角形的重心</span>
+  </a>
+  <a class="next" href="https://xgjdxj.github.io/post/tynfms/algebra-the-formula-of-extracting-roots-on-cubic-equation/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>一元三次方程求根公式推导</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+    repo="xgjdxj/xgjcomments"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://xgjdxj.github.io/">徐冠军</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style></body>
+
+</html>
